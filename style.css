@@ -1,0 +1,27 @@
+body {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #f69100;
+}
+
+.jumbotron {
+    background-image: url('https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/elgranchef/P/Platos-para-el-Dia-de-la-Madre-5.jpg');
+    background-size: cover;
+    color: #ffffff;
+    padding: 100px 0;
+    height: 650px;
+    margin: 50px;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.footer {
+    background-color: #d27300;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.plato {
+    color: black;
+}
