@@ -53,14 +53,32 @@
 
     .card .back {
       transform: rotateY(180deg);
-      background-color: #007bff;
+      background-color: #ffa333;
       padding: 30px;
       box-sizing: border-box;
       color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .card .back p {
       margin: 10px 0;
+    }
+
+    .card .back button {
+      padding: 10px 20px;
+      background-color: #ffd19b;
+      color: #000000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .card .back button:hover {
+      background-color: #f69100;
     }
   </style>
 </head>
@@ -72,10 +90,10 @@
       <div class="front">
         <img src="https://via.placeholder.com/500x300" alt="Front Image" class="img-fluid">
       </div>
-      <div class="back d-flex flex-column justify-content-center align-items-center">
-        <p>Texto 1</p>
-        <p>Texto 2</p>
-        <p>Texto 3</p>
+      <div class="back">
+        <h3>Nombre del Lugar</h3>
+        <p>Descripción del lugar aquí. Puedes agregar más texto según sea necesario.</p>
+        <button>Reservar</button>
       </div>
     </div>
     
@@ -85,10 +103,10 @@
       <div class="front">
         <img src="https://via.placeholder.com/500x300" alt="Front Image" class="img-fluid">
       </div>
-      <div class="back d-flex flex-column justify-content-center align-items-center">
-        <p>Texto 1</p>
-        <p>Texto 2</p>
-        <p>Texto 3</p>
+      <div class="back">
+        <h3>Nombre del Lugar</h3>
+        <p>Descripción del lugar aquí. Puedes agregar más texto según sea necesario.</p>
+        <button>Reservar</button>
       </div>
     </div>
     
