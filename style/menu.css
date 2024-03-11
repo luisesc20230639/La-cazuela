@@ -12,7 +12,7 @@ body {
 }
 
 .navbar-icon {
-    width: 30px;
+    width: 70px;
     height: auto;
     margin-right: 10px;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 .footer {
-    background-color: #d27300;
+    background-color: #f69100;
     color: #ffffff;
     padding: 20px 0;
 }
@@ -104,4 +104,5 @@ body {
 
 .card .back button:hover {
     background-color: #f69100;
+    
 }

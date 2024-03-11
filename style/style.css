@@ -2,12 +2,32 @@ body {
     background-color: #ffffff;
 }
 
+#titnav {
+    font-size: 25px;
+}
+
 .navbar {
     background-color: #f69100;
 }
 
+.navbar-icon {
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+.navbar-nav .nav-link {
+    font-size: 22px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #333;
+}
+
+
 .jumbotron {
-    background-image: url('https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/elgranchef/P/Platos-para-el-Dia-de-la-Madre-5.jpg');
+    background-image: url('../imgs/plato\ del\ dia.jpg');
     background-size: cover;
     color: #ffffff;
     padding: 100px 0;
@@ -17,7 +37,7 @@ body {
 }
 
 .footer {
-    background-color: #d27300;
+    background-color: #f69100;
     color: #ffffff;
     padding: 20px 0;
 }
