@@ -78,7 +78,7 @@ body {
 
 .card .back {
     transform: rotateY(180deg);
-    background-color: #ffa333;
+    background-color: #ffd19b;
     padding: 30px;
     box-sizing: border-box;
     color: white;
