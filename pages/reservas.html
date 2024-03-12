@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cazuela - Reservaciones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">   
+    <link rel="stylesheet" href="../style/reservaciones.css">
+    <link rel="shorcut icon" href="../imgs/cazuela.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a id="titnav" class="navbar-brand" href="#">
+            <img src="../imgs/bg.png" alt="Icono" class="navbar-icon">
+            La Cazuela
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/menu.html">Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reservar Platos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Reserva de Platillos</h2>
+
+        <form action="procesar_reserva.php" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required>
+            </div>
+
+            <div class="form-group">
+                <label for="metodo_pago">Método de Pago:</label>
+                <select class="form-control" id="metodo_pago" name="metodo_pago" onchange="mostrarIconoPago()" required>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                </select>
+            </div>
+
+            <img id="paymentIcon" src="" alt="Icono de Pago">
+
+            <div class="form-group">
+                <label for="dia_recogida">Día de Recogida:</label>
+                <input type="date" class="form-control" id="dia_recogida" name="dia_recogida" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hora_recogida">Hora de Recogida:</label>
+                <input type="time" class="form-control" id="hora_recogida" name="hora_recogida" required>
+            </div>
+
+            <div class="form-group">
+                <label for="platillo">Platillos:</label>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Seleccionar Platillo
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Platillo 1</a>
+                        <a class="dropdown-item" href="#">Platillo 2</a>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar Reserva</button>
+        </form>
+
+    </div>
+    <br><br>
+    <footer class="footer text-center">
+        <p>&copy; 2024 La Cazuela. Todos los derechos reservados.</p>
+    </footer>
+
+        <script src="../js/reservaciones.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
