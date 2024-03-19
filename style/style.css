@@ -1,9 +1,12 @@
 body {
     background-color: #ffffff;
+    
 }
 
 #titnav {
     font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .navbar {
@@ -22,6 +25,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
+
     color: #333;
 }
 
@@ -36,6 +40,26 @@ body {
     background-color: rgb(0, 0, 0, 0.3);
 }
 
+.historia {
+    margin-left: 105px;
+    margin-right: 105px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    padding: 20px; 
+}
+
+.historia h2{
+    text-align: center;
+}
+
+.historia p{
+    font-size: 132%;
+}
+
+.historia h3{
+    text-align: center;
+}
+
 .footer {
     background-color: #f69100;
     color: #ffffff;
@@ -44,4 +68,8 @@ body {
 
 .plato {
     color: black;
+}
+
+.segunda-seccion {
+    background-color: blanchedalmond;
 }
