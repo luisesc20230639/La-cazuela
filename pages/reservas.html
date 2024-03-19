@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Reserva con Selección de Platillos (Bootstrap)</title>
+    <title>reservaciones - La Cazuela</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.0/sweetalert2.min.css">
     <link rel="stylesheet" href="../style/reservaciones.css">
+    <link rel="shorcut icon" href="../imgs/cazuela.png">
        
 </head>
 
@@ -27,16 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarNav" >
           <ul class="navbar-nav ml-auto ">
             <li class="nav-item active" >
-              <a class="nav-link" href="../index.html">Inicio</a>
+              <a class="nav-link" href="../index.html"><img src="../imgs/hogar.png" alt="" class="icon">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/menu.html">Menú</a>
+              <a class="nav-link" href="../pages/menu.html"><img src="../imgs/menu.png" alt="" class="icon">Menú</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/reservas.html">Reservar Platos</a>
+              <a class="nav-link" href="../pages/reservas.html"><img src="../imgs/recepcion.png" alt="" class="icon">Reservar Platos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/reseñas.html">Reseñas</a>
+              <a class="nav-link" href="../pages/reseñas.html"><img src="../imgs/clasificacion.png" alt="" class="icon">Reseñas</a>
             </li>
           </ul>
         </div>
@@ -63,13 +64,12 @@
                 <div id="icono_pago_container">
                     <select class="form-control" id="metodo_pago" name="metodo_pago" onchange="mostrarIconoPago()"
                         required>
-                        <option value="">Seleccionar método de pago</option>
+                       
                         <option value="efectivo">Efectivo</option>
                         <option value="tarjeta">Tarjeta de Crédito/Débito</option>
-                        <option value="transferencia">Transferencia Bancaria</option>
                     </select>
                     <div class="input-group-append">
-                        <img id="paymentIcon" src="" alt="Icono de Pago">
+                        <img id="paymentIcon" src="../imgs/fondo-vinilo-blanco.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -95,9 +95,32 @@
                         Seleccionar Platillo
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Platillo 1')">Platillo 1</a>
-                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Platillo 2')">Platillo 2</a>
-                        <!-- Repite esto para los 25 platillos -->
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Tartar de salmón')">Tartar de salmón</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Risotto de trufa negra')">Risotto de trufa negra</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Carpaccio de ternera')">Carpaccio de ternera</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Foie gras con compota de higos')">Foie gras con compota de higos</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Ceviche de vieiras')">Ceviche de vieiras</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Pulpo a la gallega')">Pulpo a la gallega</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Steak tartar')">Steak tartar</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Sushi de toro')">Sushi de toro</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Raviolis de langosta')">Raviolis de langosta</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Cordero confitado')">Cordero confitado</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Ensalada de queso de cabra y remolacha')">Ensalada de queso de cabra y remolacha</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Terrina de foie gras')">Terrina de foie gras</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Tartar de atún')">Tartar de atún</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Cochinillo asado')">Cochinillo asado</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Lasaña de pato confitado')">Lasaña de pato confitado</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Carpaccio de pulpo')">Carpaccio de pulpo</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Salmón en costra de pistachos')">Salmón en costra de pistachos</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Tartar de langosta')">Tartar de langosta</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Risotto de setas silvestres')">Risotto de setas silvestres</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Carrilleras de cerdo ibérico al vino tinto')">Carrilleras de cerdo ibérico al vino tinto</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Tartar de vieiras')">Tartar de vieiras</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Carpaccio de wagyu')">Carpaccio de wagyu</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Ceviche de lubina')">Ceviche de lubina</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Tournedó de ternera con salsa de foie')">Tournedó de ternera con salsa de foie</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Tartar de pato')">Tartar de pato</a>
+
                     </div>
                 </div>
                 <div class="platillo-list mt-3">
@@ -114,6 +137,11 @@
 
     <footer class="footer text-center">
         <p>&copy; 2024 La Cazuela. Todos los derechos reservados.</p>
+        <div class="g-col-6 g-col-md-4"><a href="https://www.instagram.com/" target="_blank"><img src="../imgs/whatsapp.png" alt="" class="icon">Contactanos por whatsapp</a></div>
+      <div class="g-col-6 g-col-md-4"><a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="../imgs/medios-de-comunicacion-social.png" alt="" class="icon">Nuestro facebook</a></div>
+      <div class="g-col-6 g-col-md-4"><a href="https://web.whatsapp.com/" target="_blank"><img src="../imgs/instagram.png" alt="" class="icon">Nuestro instagram</a></div>
+
+
       </footer>
     
 

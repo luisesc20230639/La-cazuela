@@ -5,6 +5,17 @@ body {
 
 #titnav {
     font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.icon{
+    width: 30px;
+    margin: 8px;
+}
+
+a{
+    color: white;
 }
 
 .navbar {

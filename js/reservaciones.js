@@ -2,9 +2,9 @@ function mostrarIconoPago() {
     var metodoPago = document.getElementById("metodo_pago").value;
     var iconoPago = document.getElementById("paymentIcon");
     if (metodoPago === "efectivo") {
-        iconoPago.src = "https://image.flaticon.com/icons/svg/131/131778.svg";
+        iconoPago.src = "../imgs/billetes-de-banco.png";
     } else if (metodoPago === "tarjeta") {
-        iconoPago.src = "https://image.flaticon.com/icons/svg/97/97995.svg";
+        iconoPago.src = "../imgs/tarjeta-bancaria.png";
     } else {
         iconoPago.src = "";
     }
