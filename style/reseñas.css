@@ -1,0 +1,36 @@
+body {
+    background-color: #ffffff;
+    background-image: url('../imgs/carpaccio.jpg');
+    background-size: 100%;
+}
+
+#titnav {
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #f69100;
+}
+
+.navbar-icon {
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #333;
+}
+
+.footer {
+background-color: #f69100;
+color: #ffffff;
+padding: 20px 0;
+}
