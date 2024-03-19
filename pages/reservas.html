@@ -1,73 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Cazuela - Reservaciones</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">   
-    <link rel="stylesheet" href="../style/reservaciones.css">
-    <link rel="shorcut icon" href="../imgs/cazuela.png">
+    <title>Formulario de Reserva con Selección de Platillos (Bootstrap)</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.0/sweetalert2.min.css">
+       
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a id="titnav" class="navbar-brand" href="#">
-            <img src="../imgs/bg.png" alt="Icono" class="navbar-icon">
-            La Cazuela
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/menu.html">Menú</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Reservar Platos</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
     <div class="container mt-5">
-        <h2 class="mb-4">Reserva de Platillos</h2>
+        <h2 class="mb-4 text-center">Reserva de Platillos</h2>
 
-        <form action="procesar_reserva.php" method="POST">
+        <form id="reservaForm">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" required pattern="[A-Za-z\s]+">
             </div>
 
             <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido" name="apellido" required>
+                <input type="text" class="form-control" id="apellido" name="apellido" required pattern="[A-Za-z\s]+">
             </div>
 
             <div class="form-group">
-                <label for="metodo_pago">Método de Pago:</label>
-                <select class="form-control" id="metodo_pago" name="metodo_pago" onchange="mostrarIconoPago()" required>
-                    <option value="efectivo">Efectivo</option>
-                    <option value="tarjeta">Tarjeta de Crédito/Débito</option>
-                </select>
+                <label for="metodo_pago" id="label_metodo_pago">Método de Pago:</label>
+                <div id="icono_pago_container">
+                    <select class="form-control" id="metodo_pago" name="metodo_pago" onchange="mostrarIconoPago()"
+                        required>
+                        <option value="">Seleccionar método de pago</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                        <option value="transferencia">Transferencia Bancaria</option>
+                    </select>
+                    <div class="input-group-append">
+                        <img id="paymentIcon" src="" alt="Icono de Pago">
+                    </div>
+                </div>
             </div>
 
-            <img id="paymentIcon" src="" alt="Icono de Pago">
-
             <div class="form-group">
-                <label for="dia_recogida">Día de Recogida:</label>
-                <input type="date" class="form-control" id="dia_recogida" name="dia_recogida" required>
+                <label for="fecha_recogida">Fecha de Recogida:</label>
+                <input type="date" class="form-control" id="fecha_recogida" name="fecha_recogida"
+                    min="<?php echo date('Y-m-d'); ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="hora_recogida">Hora de Recogida:</label>
                 <input type="time" class="form-control" id="hora_recogida" name="hora_recogida" required>
+                <small class="form-text text-muted">Horarios de atención: Lunes a Viernes de 7am a 8pm y Sábado a
+                    Domingo de 8am a 6pm</small>
             </div>
 
             <div class="form-group">
@@ -78,29 +63,26 @@
                         Seleccionar Platillo
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Platillo 1</a>
-                        <a class="dropdown-item" href="#">Platillo 2</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Platillo 1')">Platillo 1</a>
+                        <a class="dropdown-item" href="#" onclick="agregarPlatillo('Platillo 2')">Platillo 2</a>
+                        <!-- Repite esto para los 25 platillos -->
                     </div>
+                </div>
+                <div class="platillo-list mt-3">
+                    <h5>Platillos Seleccionados:</h5>
+                    <ul id="platilloSeleccionado"></ul>
                 </div>
             </div>
 
             <button type="submit" class="btn btn-primary">Enviar Reserva</button>
         </form>
-
     </div>
-    <br><br>
-    <footer class="footer text-center">
-        <p>&copy; 2024 La Cazuela. Todos los derechos reservados.</p>
-    </footer>
 
-        <script src="../js/reservaciones.js"></script>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.0/sweetalert2.min.js"></script>
+    
 </body>
 
 </html>
